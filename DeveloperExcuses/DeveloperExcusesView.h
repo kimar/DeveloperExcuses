@@ -10,4 +10,7 @@
 
 @interface DeveloperExcusesView : ScreenSaverView
 
+@property (strong) NSTextField *label;
+@property (assign) BOOL locked;
+
 @end
