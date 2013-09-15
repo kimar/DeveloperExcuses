@@ -39,6 +39,21 @@
     [super stopAnimation];
 }
 
+- (NSRect) activeScreenRect
+{
+    
+    NSRect screenRect;
+    NSArray *screenArray = [NSScreen screens];
+    NSInteger screenCount = [screenArray count];
+    
+    for (NSInteger i = 0; i < screenCount; i++)
+    {
+        NSScreen *screen = [screenArray objectAtIndex:i];
+        screenRect = [screen visibleFrame];
+    }
+    return screenRect;
+}
+
 - (void)drawRect:(NSRect)rect
 {
     [super drawRect:rect];
@@ -46,7 +61,7 @@
     NSSize s = [self.label.stringValue sizeWithAttributes:@{NSFontAttributeName: self.label.font}];
     CGRect rl = self.label.frame;
     rl.size.height = s.height;
-    rl.origin.y = [NSScreen mainScreen].frame.size.height/2;
+    rl.origin.y = [self activeScreenRect].size.height/2;
     self.label.frame = rl;
     self.label.textColor = [NSColor blackColor];
 

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>4CC4EB4B-918E-4C47-A3F7-8C18775BABD2</string>
+	<key>IDESourceControlProjectName</key>
+	<string>DeveloperExcuses</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>283B2FC7-2770-4804-852B-9FAAAD9A31FD</key>
+		<string>ssh://github.com/kimar/DeveloperExcuses.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>DeveloperExcuses.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>283B2FC7-2770-4804-852B-9FAAAD9A31FD</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/kimar/DeveloperExcuses.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>283B2FC7-2770-4804-852B-9FAAAD9A31FD</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>283B2FC7-2770-4804-852B-9FAAAD9A31FD</string>
+			<key>IDESourceControlWCCName</key>
+			<string>DeveloperExcuses</string>
+		</dict>
+	</array>
+</dict>
+</plist>
