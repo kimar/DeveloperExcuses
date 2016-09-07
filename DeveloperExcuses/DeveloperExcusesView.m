@@ -8,10 +8,18 @@
 
 #import "DeveloperExcusesView.h"
 
+@interface DeveloperExcusesView()
+
+@property NSUserDefaults *defaults;
+
+@end
+
+NSString *kLastFetchedQuote = @"kLastFetchedQuote";
+NSString *kHtmlRegex = @"<a href=\"/\" rel=\"nofollow\" style=\"text-decoration: none; color: #333;\">(.+)</a>";
+
 @implementation DeveloperExcusesView
 
-- (id)initWithFrame:(NSRect)frame isPreview:(BOOL)isPreview
-{
+- (id)initWithFrame:(NSRect)frame isPreview:(BOOL)isPreview {
     self = [super initWithFrame:frame isPreview:isPreview];
     if (self) {
         [self initialize];
@@ -19,8 +27,7 @@
     return self;
 }
 
-- (id)initWithCoder:(NSCoder *)aDecoder
-{
+- (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     if (self) {
         [self initialize];
@@ -29,74 +36,109 @@
     return self;
 }
 
-- (void)drawRect:(NSRect)rect
-{
+- (void)drawRect:(NSRect)rect {
     [super drawRect:rect];
-    
-    NSSize s = [self.label.stringValue sizeWithAttributes:@{NSFontAttributeName: self.label.font}];
-    CGRect rl = self.label.frame;
-    rl.size.height = s.height;
-    rl.origin.y = rect.size.height/2;
-    self.label.frame = rl;
-    self.label.textColor = [NSColor blackColor];
+
+    CGRect newFrame = self.label.frame;
+    CGFloat height = [_label.stringValue sizeWithAttributes:@{NSFontAttributeName: _label.font}].height;
+    newFrame.size.height = height;
+    newFrame.origin.y = (NSHeight(self.bounds) - height) / 2;
+    _label.frame = newFrame;
 
     [[NSColor whiteColor] setFill];
     NSRectFill(rect);
 }
 
-- (void)animateOneFrame
-{
-    if(!self.locked)
-    {
-        self.locked = YES;
-        [self getRandomQuote];
-        double delayInSeconds = 10.0;
-        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-            self.locked = NO;
-        });
-    }
-    
-    self.needsDisplay = YES;
+- (void)animateOneFrame {
+    [self fetchNextQuote];
 }
 
-- (BOOL)hasConfigureSheet
-{
+- (BOOL)hasConfigureSheet {
     return NO;
 }
 
-- (NSWindow*)configureSheet
-{
+- (NSWindow*)configureSheet {
     return nil;
 }
 
-- (void) initialize
-{
-    [self setAnimationTimeInterval:1/30.0];
+- (void) initialize {
+    [self setAnimationTimeInterval:0.5];
+    _defaults = [NSUserDefaults standardUserDefaults];
 
-    self.label = [[NSTextField alloc] initWithFrame:NSMakeRect(0, 0, self.bounds.size.width, 100)];
-    self.label.autoresizingMask = NSViewWidthSizable;
-    self.label.alignment = NSCenterTextAlignment;
-    self.label.backgroundColor = [NSColor clearColor];
-    [self.label setEditable:NO];
-    [self.label setBezeled:NO];
-    self.label.textColor = [NSColor blackColor];
-    self.label.font = [NSFont fontWithName:@"Courier" size:24.0];
-    self.label.stringValue = @"Loading...";
-    [self addSubview:self.label];
-    [self getRandomQuote];
+    [self configureLabel];
+    [self restoreLastQuote];
+    [self fetchNextQuote];
 }
 
-- (void) getRandomQuote
-{
+- (void)configureLabel {
+    _label = [[NSTextField alloc] initWithFrame:self.bounds];
+    _label.autoresizingMask = NSViewWidthSizable;
+    _label.alignment = NSCenterTextAlignment;
+
+    _label.stringValue = @"Loading...";
+    _label.textColor = [NSColor blackColor];
+    _label.font = [NSFont fontWithName:@"Courier" size:(self.preview ? 12.0 : 24.0)];
+
+    _label.backgroundColor = [NSColor clearColor];
+    [_label setEditable:NO];
+    [_label setBezeled:NO];
+
+    [self addSubview:_label];
+}
+
+- (void)restoreLastQuote {
+    self.shouldFetchQuote = YES;
+    NSString *lastQuote = [_defaults valueForKey:kLastFetchedQuote];
+    [self setQuote: lastQuote];
+}
+
+- (void)scheduleNextFetch {
+    double delayInSeconds = 10.0;
+    dispatch_time_t fireTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(fireTime, dispatch_get_main_queue(), ^(void){
+        self.shouldFetchQuote = YES;
+    });
+}
+
+- (void)setQuote:(NSString *) quote {
+    if (quote != nil) {
+        _label.stringValue = quote;
+        [_defaults setObject:quote forKey:kLastFetchedQuote];
+        [_defaults synchronize];
+        self.shouldFetchQuote = NO;
+        [self setNeedsDisplay:YES];
+    }
+
+    [self scheduleNextFetch];
+}
+
+
+- (void) fetchNextQuote {
+    @synchronized (self) {
+        if (!self.shouldFetchQuote) {
+            return;
+        }
+    }
+
+    self.shouldFetchQuote = NO;
+
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
-        NSData *html = [NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://developerexcuses.com"]];
-        NSString *string = [NSString stringWithUTF8String:[html bytes]];
-        NSArray *parts = [string componentsSeparatedByString:@"<a href=\"/\" rel=\"nofollow\" style=\"text-decoration: none; color: #333;\">"];
-        NSString *newString = [parts objectAtIndex:1];
-        NSArray *newParts = [newString componentsSeparatedByString:@"</a>"];
+        NSError *error;
+        NSString *quote;
+
+        NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://developerexcuses.com"]];
+        NSString *html = [NSString stringWithUTF8String:[data bytes]];
+
+        NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:kHtmlRegex options:0 error:&error];
+
+        NSArray *matches = [regex matchesInString:html options:0 range:NSMakeRange(0, html.length)];
+        for (NSTextCheckingResult *match in matches) {
+            quote = [html substringWithRange:[match rangeAtIndex:1]];
+        }
+
         dispatch_async(dispatch_get_main_queue(), ^{
-            self.label.stringValue = [newParts objectAtIndex:0];
+            [self scheduleNextFetch];
+            [self setQuote: quote];
         });
     });
 }

@@ -11,6 +11,6 @@
 @interface DeveloperExcusesView : ScreenSaverView
 
 @property (strong) NSTextField *label;
-@property (assign) BOOL locked;
+@property (assign) BOOL shouldFetchQuote;
 
 @end
