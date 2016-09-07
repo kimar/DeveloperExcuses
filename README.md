@@ -6,6 +6,6 @@ Dead simple Screensaver which periodically shows a quote from [http://developere
 
 Not officially affiliated with [http://developerexcuses.com](http://developerexcuses.com)
 
-Grab the current [Release here](https://github.com/kimar/DeveloperExcuses/raw/master/Release/DeveloperExcuses.saver.zip)!
+Grab the current [Release here](Release/DeveloperExcuses.saver.zip)!
 
 And feel free to fork and contribute ;-)
