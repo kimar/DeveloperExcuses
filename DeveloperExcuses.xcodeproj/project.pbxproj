@@ -11,6 +11,8 @@
 		2A9D0E6A17DB87B300DBFFBD /* ScreenSaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A9D0E6917DB87B300DBFFBD /* ScreenSaver.framework */; };
 		2A9D0E7417DB87B300DBFFBD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2A9D0E7217DB87B300DBFFBD /* InfoPlist.strings */; };
 		2A9D0E7817DB87B300DBFFBD /* DeveloperExcusesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A9D0E7717DB87B300DBFFBD /* DeveloperExcusesView.m */; };
+		8117802E1D80A79F00127177 /* thumbnail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8117802D1D80A79F00127177 /* thumbnail@2x.png */; };
+		811780321D80B5DD00127177 /* thumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = 811780311D80B5DD00127177 /* thumbnail.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		2A9D0E7517DB87B300DBFFBD /* DeveloperExcuses-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DeveloperExcuses-Prefix.pch"; sourceTree = "<group>"; };
 		2A9D0E7617DB87B300DBFFBD /* DeveloperExcusesView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeveloperExcusesView.h; sourceTree = "<group>"; };
 		2A9D0E7717DB87B300DBFFBD /* DeveloperExcusesView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeveloperExcusesView.m; sourceTree = "<group>"; };
+		8117802D1D80A79F00127177 /* thumbnail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thumbnail@2x.png"; sourceTree = "<group>"; };
+		811780311D80B5DD00127177 /* thumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumbnail.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +97,8 @@
 				2A9D0E7117DB87B300DBFFBD /* DeveloperExcuses-Info.plist */,
 				2A9D0E7217DB87B300DBFFBD /* InfoPlist.strings */,
 				2A9D0E7517DB87B300DBFFBD /* DeveloperExcuses-Prefix.pch */,
+				811780311D80B5DD00127177 /* thumbnail.png */,
+				8117802D1D80A79F00127177 /* thumbnail@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -161,6 +167,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A9D0E7417DB87B300DBFFBD /* InfoPlist.strings in Resources */,
+				8117802E1D80A79F00127177 /* thumbnail@2x.png in Resources */,
+				811780321D80B5DD00127177 /* thumbnail.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,6 +218,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -242,6 +251,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
