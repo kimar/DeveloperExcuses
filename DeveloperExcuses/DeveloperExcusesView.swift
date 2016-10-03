@@ -23,6 +23,16 @@ private extension UserDefaults {
     }
 }
 
+private extension NSFont {
+    func heightOfString (string: String, constrainedToWidth width: CGFloat) -> CGFloat {
+        return NSString(string: string).boundingRect(
+            with: CGSize(width: CGFloat(width), height: CGFloat(DBL_MAX)),
+            options: NSStringDrawingOptions.usesLineFragmentOrigin,
+            attributes: [NSFontAttributeName: self],
+            context: nil).size.height
+    }
+}
+
 class DeveloperExcusesView: ScreenSaverView {
     var label: NSTextField
     var fetchingDue = true
@@ -52,7 +62,7 @@ class DeveloperExcusesView: ScreenSaverView {
     override func draw(_ rect: NSRect) {
         super.draw(rect)
         var newFrame = label.frame
-        let height = (label.stringValue as NSString).size(withAttributes: [NSFontAttributeName: label.font]).height
+        let height = label.font!.heightOfString(string: label.stringValue, constrainedToWidth: rect.width)
         newFrame.size.height = height
         newFrame.origin.y = (NSHeight(bounds) - height) * 0.5
         label.frame = newFrame
