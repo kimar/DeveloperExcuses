@@ -7,15 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		077BC2B11DA22D14007DE060 /* DeveloperExcusesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077BC2B01DA22D14007DE060 /* DeveloperExcusesView.swift */; };
 		2A9D0E6817DB87B300DBFFBD /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A9D0E6717DB87B300DBFFBD /* Cocoa.framework */; };
 		2A9D0E6A17DB87B300DBFFBD /* ScreenSaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A9D0E6917DB87B300DBFFBD /* ScreenSaver.framework */; };
 		2A9D0E7417DB87B300DBFFBD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2A9D0E7217DB87B300DBFFBD /* InfoPlist.strings */; };
-		2A9D0E7817DB87B300DBFFBD /* DeveloperExcusesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A9D0E7717DB87B300DBFFBD /* DeveloperExcusesView.m */; };
 		8117802E1D80A79F00127177 /* thumbnail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8117802D1D80A79F00127177 /* thumbnail@2x.png */; };
 		811780321D80B5DD00127177 /* thumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = 811780311D80B5DD00127177 /* thumbnail.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		077BC2B01DA22D14007DE060 /* DeveloperExcusesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeveloperExcusesView.swift; sourceTree = "<group>"; };
 		2A9D0E6417DB87B300DBFFBD /* DeveloperExcuses.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeveloperExcuses.saver; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A9D0E6717DB87B300DBFFBD /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		2A9D0E6917DB87B300DBFFBD /* ScreenSaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScreenSaver.framework; path = System/Library/Frameworks/ScreenSaver.framework; sourceTree = SDKROOT; };
@@ -25,8 +26,6 @@
 		2A9D0E7117DB87B300DBFFBD /* DeveloperExcuses-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DeveloperExcuses-Info.plist"; sourceTree = "<group>"; };
 		2A9D0E7317DB87B300DBFFBD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2A9D0E7517DB87B300DBFFBD /* DeveloperExcuses-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DeveloperExcuses-Prefix.pch"; sourceTree = "<group>"; };
-		2A9D0E7617DB87B300DBFFBD /* DeveloperExcusesView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeveloperExcusesView.h; sourceTree = "<group>"; };
-		2A9D0E7717DB87B300DBFFBD /* DeveloperExcusesView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeveloperExcusesView.m; sourceTree = "<group>"; };
 		8117802D1D80A79F00127177 /* thumbnail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thumbnail@2x.png"; sourceTree = "<group>"; };
 		811780311D80B5DD00127177 /* thumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumbnail.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -84,8 +83,7 @@
 		2A9D0E6F17DB87B300DBFFBD /* DeveloperExcuses */ = {
 			isa = PBXGroup;
 			children = (
-				2A9D0E7617DB87B300DBFFBD /* DeveloperExcusesView.h */,
-				2A9D0E7717DB87B300DBFFBD /* DeveloperExcusesView.m */,
+				077BC2B01DA22D14007DE060 /* DeveloperExcusesView.swift */,
 				2A9D0E7017DB87B300DBFFBD /* Supporting Files */,
 			);
 			path = DeveloperExcuses;
@@ -141,8 +139,13 @@
 		2A9D0E5A17DB87B300DBFFBD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Marcus Kida";
+				TargetAttributes = {
+					2A9D0E6317DB87B300DBFFBD = {
+						LastSwiftMigration = 0800;
+					};
+				};
 			};
 			buildConfigurationList = 2A9D0E5D17DB87B300DBFFBD /* Build configuration list for PBXProject "DeveloperExcuses" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -189,7 +192,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A9D0E7817DB87B300DBFFBD /* DeveloperExcusesView.m in Sources */,
+				077BC2B11DA22D14007DE060 /* DeveloperExcusesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,19 +214,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_ENABLE_OBJC_GC = supported;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -232,11 +237,14 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
 			};
 			name = Debug;
 		};
@@ -244,39 +252,49 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_ENABLE_OBJC_GC = supported;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				SDKROOT = macosx;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
 			};
 			name = Release;
 		};
 		2A9D0E7C17DB87B300DBFFBD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
-				GCC_ENABLE_OBJC_GC = unsupported;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DeveloperExcuses/DeveloperExcuses-Prefix.pch";
 				INFOPLIST_FILE = "DeveloperExcuses/DeveloperExcuses-Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.marcuskida.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				WRAPPER_EXTENSION = saver;
 			};
 			name = Debug;
@@ -284,14 +302,19 @@
 		2A9D0E7D17DB87B300DBFFBD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
-				GCC_ENABLE_OBJC_GC = unsupported;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DeveloperExcuses/DeveloperExcuses-Prefix.pch";
 				INFOPLIST_FILE = "DeveloperExcuses/DeveloperExcuses-Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.marcuskida.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				WRAPPER_EXTENSION = saver;
 			};
 			name = Release;
