@@ -23,28 +23,20 @@ private extension UserDefaults {
     }
 }
 
-private extension NSFont {
-    func heightOfString (string: String, constrainedToWidth width: CGFloat) -> CGFloat {
-        return NSString(string: string).boundingRect(
-            with: CGSize(width: CGFloat(width), height: CGFloat(DBL_MAX)),
-            options: NSStringDrawingOptions.usesLineFragmentOrigin,
-            attributes: [NSFontAttributeName: self],
-            context: nil).size.height
-    }
-}
-
 class DeveloperExcusesView: ScreenSaverView {
-    var label: NSTextField
+    var label: NSTextField!
     var fetchingDue = true
     
     override init?(frame: NSRect, isPreview: Bool) {
-        label = .label(isPreview, bounds: frame)
         super.init(frame: frame, isPreview: isPreview)
+        label = .label(isPreview, bounds: frame)
         initialize()
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: coder)
+        label = .label(isPreview, bounds: bounds)
+        initialize()
     }
     
     override func configureSheet() -> NSWindow? {
@@ -61,11 +53,13 @@ class DeveloperExcusesView: ScreenSaverView {
     
     override func draw(_ rect: NSRect) {
         super.draw(rect)
+        
         var newFrame = label.frame
-        let height = label.font!.heightOfString(string: label.stringValue, constrainedToWidth: rect.width)
-        newFrame.size.height = height
-        newFrame.origin.y = (NSHeight(bounds) - height) * 0.5
-        label.frame = newFrame
+        let height = (label.stringValue as NSString).size(withAttributes: [NSFontAttributeName: label.font!]).height
+        newFrame.size.height = height;
+        newFrame.origin.y = (NSHeight(self.bounds) - height) / 2;
+        label.frame = newFrame;
+        
         NSColor.white.setFill()
         NSRectFill(rect)
     }
@@ -92,28 +86,26 @@ class DeveloperExcusesView: ScreenSaverView {
     }
     
     func scheduleNext() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 10) { [weak self] in
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
             self?.fetchingDue = true
         }
     }
     
     func fetchNext() {
-        DispatchQueue.main.async { [weak self] in
-            if let d = self?.fetchingDue, !d {
-                return
-            }
-            self?.fetchingDue = false
+        if !fetchingDue {
+            return
         }
+        fetchingDue = false
         
         DispatchQueue(label: .fetchQueue).async { [weak self] in
             guard let data = try? Data(contentsOf: .websiteUrl), let string = String(data: data, encoding: .utf8) else {
                 return
             }
-            
+
             guard let regex = try? NSRegularExpression(pattern: .htmlRegex, options: NSRegularExpression.Options(rawValue: 0)) else {
                 return
             }
-            
+
             let quotes = regex.matches(in: string, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSRange(location: 0, length: string.characters.count)).map { result in
                 return (string as NSString).substring(with: result.rangeAt(1))
             }
