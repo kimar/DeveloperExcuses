@@ -3,7 +3,6 @@ import ScreenSaver
 
 private extension String {
     static let lastQuote = "lastQuote"
-    static let fetchQueue = "io.kida.DeveloperExcuses.fetchQueue"
     static let htmlRegex = "<a href=\"/\" rel=\"nofollow\" style=\"text-decoration: none; color: #333;\">(.+)</a>"
 }
 
@@ -24,6 +23,9 @@ private extension UserDefaults {
 }
 
 class DeveloperExcusesView: ScreenSaverView {
+    let fetchQueue = DispatchQueue(label: "io.kida.DeveloperExcuses.fetchQueue")
+    let mainQueue = DispatchQueue.main
+    
     var label: NSTextField!
     var fetchingDue = true
     
@@ -60,7 +62,7 @@ class DeveloperExcusesView: ScreenSaverView {
         newFrame.origin.y = (NSHeight(self.bounds) - height) / 2;
         label.frame = newFrame;
         
-        NSColor.white.setFill()
+        NSColor.black.setFill()
         NSRectFill(rect)
     }
     
@@ -68,7 +70,7 @@ class DeveloperExcusesView: ScreenSaverView {
         animationTimeInterval = 0.5
         addSubview(label)
         restoreLast()
-        fetchNext()
+        scheduleNext()
     }
     
     func restoreLast() {
@@ -80,14 +82,14 @@ class DeveloperExcusesView: ScreenSaverView {
         if let q = quote {
             label.stringValue = q
             UserDefaults.lastQuote = q
-            fetchingDue = false
             setNeedsDisplay(frame)
         }
     }
     
     func scheduleNext() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
+        mainQueue.asyncAfter(deadline: .now() + 10) { [weak self] in
             self?.fetchingDue = true
+            self?.fetchNext()
         }
     }
     
@@ -97,7 +99,7 @@ class DeveloperExcusesView: ScreenSaverView {
         }
         fetchingDue = false
         
-        DispatchQueue(label: .fetchQueue).async { [weak self] in
+        fetchQueue.async { [weak self] in
             guard let data = try? Data(contentsOf: .websiteUrl), let string = String(data: data, encoding: .utf8) else {
                 return
             }
@@ -110,7 +112,7 @@ class DeveloperExcusesView: ScreenSaverView {
                 return (string as NSString).substring(with: result.rangeAt(1))
             }
             
-            DispatchQueue.main.async { [weak self] in
+            self?.mainQueue.async { [weak self] in
                 self?.scheduleNext()
                 self?.set(quote: quotes.first)
             }
@@ -124,7 +126,7 @@ private extension NSTextField {
         label.autoresizingMask = .viewWidthSizable
         label.alignment = .center
         label.stringValue = "Loading…"
-        label.textColor = .black
+        label.textColor = .white
         label.font = NSFont(name: "Courier", size: (isPreview ? 12.0 : 24.0))
         label.backgroundColor = .clear
         label.isEditable = false
