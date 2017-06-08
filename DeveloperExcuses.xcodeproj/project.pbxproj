@@ -465,6 +465,7 @@
 				076642FB1EE92D6D00FE8619 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2A9D0E5D17DB87B300DBFFBD /* Build configuration list for PBXProject "DeveloperExcuses" */ = {
 			isa = XCConfigurationList;
