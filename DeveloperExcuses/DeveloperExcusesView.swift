@@ -59,7 +59,7 @@ class DeveloperExcusesView: ScreenSaverView {
         var newFrame = label.frame
         let height = (label.stringValue as NSString).size(withAttributes: [NSFontAttributeName: label.font!]).height
         newFrame.size.height = height;
-        newFrame.origin.y = (NSHeight(self.bounds) - height) / 2;
+        newFrame.origin.y = rect.size.height / 2;
         label.frame = newFrame;
         
         NSColor.black.setFill()
