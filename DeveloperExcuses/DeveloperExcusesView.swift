@@ -11,6 +11,7 @@ private extension URL {
 }
 
 private extension UserDefaults {
+
     static var lastQuote: String? {
         get {
             return UserDefaults.standard.string(forKey: .lastQuote)
@@ -22,12 +23,11 @@ private extension UserDefaults {
     }
 }
 
+
 class DeveloperExcusesView: ScreenSaverView {
-    let fetchQueue = DispatchQueue(label: "io.kida.DeveloperExcuses.fetchQueue")
     let mainQueue = DispatchQueue.main
     
     var label: NSTextField!
-    var fetchingDue = true
     
     override init?(frame: NSRect, isPreview: Bool) {
         super.init(frame: frame, isPreview: isPreview)
@@ -50,7 +50,6 @@ class DeveloperExcusesView: ScreenSaverView {
     }
     
     override func animateOneFrame() {
-        fetchNext()
     }
     
     override func draw(_ rect: NSRect) {
@@ -71,54 +70,76 @@ class DeveloperExcusesView: ScreenSaverView {
         animationTimeInterval = 0.5
         addSubview(label)
         restoreLast()
-        scheduleNext()
+        UserDefaults.standard.addObserver(self, forKeyPath: .lastQuote, options: NSKeyValueObservingOptions.new, context: nil)
+        
+        UserDefaultUpdater.sharedInstance.start()
     }
     
-    func restoreLast() {
-        fetchingDue = true
-        set(quote: UserDefaults.lastQuote)
+    deinit {
+        UserDefaults.standard.removeObserver(self, forKeyPath: .lastQuote)
     }
     
-    func set(quote: String?) {
-        if let q = quote {
-            label.stringValue = q
-            UserDefaults.lastQuote = q
-            setNeedsDisplay(frame)
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        mainQueue.async { [weak self] in
+            self?.restoreLast()
         }
     }
     
+    func restoreLast() {
+        
+        if let q = UserDefaults.lastQuote {
+            label.stringValue = q
+            setNeedsDisplay(frame)
+        }
+    }
+
+}
+
+
+class UserDefaultUpdater{
+    static let sharedInstance = UserDefaultUpdater()
+    
+    let fetchQueue = DispatchQueue(label: "io.kida.DeveloperExcuses.fetchQueue")
+    let mainQueue = DispatchQueue.main
+    
+    var started = false
+    
+    func start(){
+        if (!started) {
+            scheduleNext()
+        }
+        started = true;
+    }
+    
     func scheduleNext() {
+        NSLog("scheduleNext")
         mainQueue.asyncAfter(deadline: .now() + 10) { [weak self] in
-            self?.fetchingDue = true
             self?.fetchNext()
         }
     }
     
     func fetchNext() {
-        if !fetchingDue {
-            return
-        }
-        fetchingDue = false
-        
+        NSLog("fetchNext")
         fetchQueue.async { [weak self] in
             guard let data = try? Data(contentsOf: .websiteUrl), let string = String(data: data, encoding: .utf8) else {
                 return
             }
-
+            
             guard let regex = try? NSRegularExpression(pattern: .htmlRegex, options: NSRegularExpression.Options(rawValue: 0)) else {
                 return
             }
-
+            
             let quotes = regex.matches(in: string, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSRange(location: 0, length: string.characters.count)).map { result in
                 return (string as NSString).substring(with: result.rangeAt(1))
             }
             
             self?.mainQueue.async { [weak self] in
+                UserDefaults.lastQuote = quotes.first
                 self?.scheduleNext()
-                self?.set(quote: quotes.first)
             }
         }
     }
+    
 }
 
 private extension NSTextField {
