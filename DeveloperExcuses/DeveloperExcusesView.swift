@@ -23,7 +23,7 @@ private extension UserDefaults {
 }
 
 private extension TimeInterval {
-    static let minimumFetchInterval = 3.0
+    static let minimumFetchInterval = 15.0
 }
 
 private extension Date {
