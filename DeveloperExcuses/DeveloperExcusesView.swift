@@ -22,12 +22,23 @@ private extension UserDefaults {
     }
 }
 
+private extension TimeInterval {
+    static let minimumFetchInterval = 3.0
+}
+
+private extension Date {
+    func isFetchDue(since: Date) -> Bool {
+        return timeIntervalSinceReferenceDate > since.timeIntervalSinceReferenceDate + .minimumFetchInterval
+    }
+}
+
 class DeveloperExcusesView: ScreenSaverView {
     let fetchQueue = DispatchQueue(label: "io.kida.DeveloperExcuses.fetchQueue")
     let mainQueue = DispatchQueue.main
     
     var label: NSTextField!
     var fetchingDue = true
+    var lastFetchDate: Date?
     
     override init?(frame: NSRect, isPreview: Bool) {
         super.init(frame: frame, isPreview: isPreview)
@@ -88,10 +99,22 @@ class DeveloperExcusesView: ScreenSaverView {
     }
     
     func scheduleNext() {
-        mainQueue.asyncAfter(deadline: .now() + 10) { [weak self] in
-            self?.fetchingDue = true
-            self?.fetchNext()
+        mainQueue.asyncAfter(deadline: .now() + 1) { [weak self] in
+            guard let 🕑 = self?.lastFetchDate else {
+                self?.scheduleForFetch()
+                return
+            }
+            guard Date().isFetchDue(since: 🕑) else {
+                self?.scheduleNext()
+                return
+            }
+            self?.scheduleForFetch()
         }
+    }
+    
+    private func scheduleForFetch() {
+        fetchingDue = true
+        fetchNext()
     }
     
     func fetchNext() {
@@ -99,7 +122,6 @@ class DeveloperExcusesView: ScreenSaverView {
             return
         }
         fetchingDue = false
-        
         fetchQueue.async { [weak self] in
             guard let data = try? Data(contentsOf: .websiteUrl), let string = String(data: data, encoding: .utf8) else {
                 return
@@ -113,7 +135,8 @@ class DeveloperExcusesView: ScreenSaverView {
                 return (string as NSString).substring(with: result.range(at: 1))
             }
             
-            self?.mainQueue.async { [weak self] in
+            self?.mainQueue.sync { [weak self] in
+                self?.lastFetchDate = Date()
                 self?.scheduleNext()
                 self?.set(quote: quotes.first)
             }
