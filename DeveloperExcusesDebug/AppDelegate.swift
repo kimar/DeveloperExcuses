@@ -15,13 +15,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         guard
-            let window = NSApplication.shared().mainWindow,
+            let window = NSApplication.shared.mainWindow,
             let screenSaverView = screenSaverView
         else {
             preconditionFailure()
         }
         screenSaverView.frame = window.contentView!.bounds;
-        screenSaverView.autoresizingMask = [.viewHeightSizable, .viewWidthSizable]
+        screenSaverView.autoresizingMask = [.height, .width]
         window.contentView!.addSubview(screenSaverView);
     }
 

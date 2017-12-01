@@ -41,11 +41,11 @@ class DeveloperExcusesView: ScreenSaverView {
         initialize()
     }
     
-    override func configureSheet() -> NSWindow? {
+    override var configureSheet: NSWindow? {
         return nil
     }
     
-    override func hasConfigureSheet() -> Bool {
+    override var hasConfigureSheet: Bool {
         return false
     }
     
@@ -60,11 +60,11 @@ class DeveloperExcusesView: ScreenSaverView {
         newFrame.origin.x = 0
         newFrame.origin.y = rect.size.height / 2
         newFrame.size.width = rect.size.width
-        newFrame.size.height = (label.stringValue as NSString).size(withAttributes: [NSFontAttributeName: label.font!]).height
+        newFrame.size.height = (label.stringValue as NSString).size(withAttributes: [NSAttributedStringKey.font: label.font!]).height
         label.frame = newFrame
         
         NSColor.black.setFill()
-        NSRectFill(rect)
+        rect.fill()
     }
     
     func initialize() {
@@ -109,8 +109,8 @@ class DeveloperExcusesView: ScreenSaverView {
                 return
             }
 
-            let quotes = regex.matches(in: string, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSRange(location: 0, length: string.characters.count)).map { result in
-                return (string as NSString).substring(with: result.rangeAt(1))
+            let quotes = regex.matches(in: string, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSRange(location: 0, length: string.lengthOfBytes(using: .utf8))).map { result in
+                return (string as NSString).substring(with: result.range(at: 1))
             }
             
             self?.mainQueue.async { [weak self] in
@@ -124,7 +124,7 @@ class DeveloperExcusesView: ScreenSaverView {
 private extension NSTextField {
     static func label(_ isPreview: Bool, bounds: CGRect) -> NSTextField {
         let label = NSTextField(frame: bounds)
-        label.autoresizingMask = .viewWidthSizable
+        label.autoresizingMask = NSView.AutoresizingMask.width
         label.alignment = .center
         label.stringValue = "Loading…"
         label.textColor = .white
