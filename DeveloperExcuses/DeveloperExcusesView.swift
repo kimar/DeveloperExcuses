@@ -122,7 +122,7 @@ class DeveloperExcusesView: ScreenSaverView {
             return
         }
         fetchingDue = false
-        fetchQueue.async { [weak self] in
+        fetchQueue.sync { [weak self] in
             guard let data = try? Data(contentsOf: .websiteUrl), let string = String(data: data, encoding: .utf8) else {
                 return
             }
@@ -135,7 +135,7 @@ class DeveloperExcusesView: ScreenSaverView {
                 return (string as NSString).substring(with: result.range(at: 1))
             }
             
-            self?.mainQueue.sync { [weak self] in
+            self?.mainQueue.async { [weak self] in
                 self?.lastFetchDate = Date()
                 self?.scheduleNext()
                 self?.set(quote: quotes.first)
