@@ -1,6 +1,6 @@
 # DeveloperExcuses.saver
 
-## Powered by [OnelinerKit](https://github.com/kimar/OnelinerKit).
+## Proudly powered by [OnelinerKit](https://github.com/kimar/OnelinerKit).
 
 ![Screenshot](Release/Screenshot.png)
 
