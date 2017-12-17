@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		072388001FE6884B00B1E0E2 /* OnelinerKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 072387FF1FE6884A00B1E0E2 /* OnelinerKit.framework */; };
+		072388011FE6885200B1E0E2 /* OnelinerKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 072387FF1FE6884A00B1E0E2 /* OnelinerKit.framework */; };
+		072388021FE6885200B1E0E2 /* OnelinerKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 072387FF1FE6884A00B1E0E2 /* OnelinerKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		076642F11EE92D6D00FE8619 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076642F01EE92D6D00FE8619 /* AppDelegate.swift */; };
 		076642F51EE92D6D00FE8619 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 076642F41EE92D6D00FE8619 /* Assets.xcassets */; };
 		076642FD1EE92D9500FE8619 /* DeveloperExcusesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077BC2B01DA22D14007DE060 /* DeveloperExcusesView.swift */; };
@@ -19,7 +22,22 @@
 		811780321D80B5DD00127177 /* thumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = 811780311D80B5DD00127177 /* thumbnail.png */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		07A101791FE687A600F7A42F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				072388021FE6885200B1E0E2 /* OnelinerKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		072387FF1FE6884A00B1E0E2 /* OnelinerKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OnelinerKit.framework; path = Carthage/Build/Mac/OnelinerKit.framework; sourceTree = "<group>"; };
 		076642EE1EE92D6D00FE8619 /* DeveloperExcusesDebug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeveloperExcusesDebug.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		076642F01EE92D6D00FE8619 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		076642F41EE92D6D00FE8619 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -44,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				072388011FE6885200B1E0E2 /* OnelinerKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,6 +72,7 @@
 			files = (
 				2A9D0E6817DB87B300DBFFBD /* Cocoa.framework in Frameworks */,
 				2A9D0E6A17DB87B300DBFFBD /* ScreenSaver.framework in Frameworks */,
+				072388001FE6884B00B1E0E2 /* OnelinerKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +112,7 @@
 		2A9D0E6617DB87B300DBFFBD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				072387FF1FE6884A00B1E0E2 /* OnelinerKit.framework */,
 				2A9D0E6717DB87B300DBFFBD /* Cocoa.framework */,
 				2A9D0E6917DB87B300DBFFBD /* ScreenSaver.framework */,
 				2A9D0E6B17DB87B300DBFFBD /* Other Frameworks */,
@@ -150,6 +171,7 @@
 				076642EA1EE92D6D00FE8619 /* Sources */,
 				076642EB1EE92D6D00FE8619 /* Frameworks */,
 				076642EC1EE92D6D00FE8619 /* Resources */,
+				07A101791FE687A600F7A42F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -169,6 +191,7 @@
 				2A9D0E6017DB87B300DBFFBD /* Headers */,
 				2A9D0E6117DB87B300DBFFBD /* Resources */,
 				2A9D0E6217DB87B300DBFFBD /* Rez */,
+				07A101721FE685EC00F7A42F /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -250,6 +273,25 @@
 		};
 /* End PBXRezBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		07A101721FE685EC00F7A42F /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/Mac/OnelinerKit.framework",
+			);
+			name = Carthage;
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/OnelinerKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		076642EA1EE92D6D00FE8619 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -300,6 +342,10 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 857XYUU5FE;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				INFOPLIST_FILE = DeveloperExcusesDebug/Info.plist;
@@ -332,6 +378,10 @@
 				DEVELOPMENT_TEAM = 857XYUU5FE;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				INFOPLIST_FILE = DeveloperExcusesDebug/Info.plist;
@@ -436,6 +486,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DeveloperExcuses/DeveloperExcuses-Prefix.pch";
 				INFOPLIST_FILE = "DeveloperExcuses/DeveloperExcuses-Info.plist";
@@ -455,6 +509,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DeveloperExcuses/DeveloperExcuses-Prefix.pch";
 				INFOPLIST_FILE = "DeveloperExcuses/DeveloperExcuses-Info.plist";
