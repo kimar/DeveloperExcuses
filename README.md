@@ -19,3 +19,7 @@ And feel free to fork and contribute ;-)
 ```
 $ carthage build --platform macos
 ```
+
+## License
+
+See [LICENSE.md](LICENSE.md)
