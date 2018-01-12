@@ -1,5 +1,10 @@
 # DeveloperExcuses.saver
 
+[![Twitter: @Kidmar](https://img.shields.io/badge/contact-@Kidmar-blue.svg?style=flat)](https://twitter.com/Kidmar)
+[![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/kimar/DeveloperExcuses/blob/master/LICENSE.md)
+[![TravisCI](https://api.travis-ci.org/kimar/DeveloperExcuses.svg?branch=master)](https://travis-ci.org/kimar/DeveloperExcuses)
+
+
 ## Proudly powered by [OnelinerKit](https://github.com/kimar/OnelinerKit).
 
 ![Screenshot](Release/Screenshot.png)
