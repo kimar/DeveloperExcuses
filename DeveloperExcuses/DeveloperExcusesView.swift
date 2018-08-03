@@ -3,11 +3,11 @@ import ScreenSaver
 import OnelinerKit
 
 private extension String {
-    static let htmlRegex = "<a href=\"/\" rel=\"nofollow\" style=\"text-decoration: none; color: #333;\">(.+)</a>"
+    static let htmlRegex = "<p class=\"subtitle\">(.+)</p>"
 }
 
 private extension URL {
-    static let websiteUrl = URL(string: "http://developerexcuses.com")!
+    static let websiteUrl = URL(string: "https://icanhazdadjoke.com/")!
 }
 
 class DeveloperExcusesView: OnelinerView {
