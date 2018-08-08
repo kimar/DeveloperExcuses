@@ -20,6 +20,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         else {
             preconditionFailure()
         }
+        screenSaverView.textColor = .red
+        screenSaverView.backgroundColor = .blue
+        
         screenSaverView.frame = window.contentView!.bounds;
         screenSaverView.autoresizingMask = [.height, .width]
         window.contentView!.addSubview(screenSaverView);
