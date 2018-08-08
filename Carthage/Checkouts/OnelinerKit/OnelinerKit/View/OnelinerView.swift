@@ -16,6 +16,9 @@ open class OnelinerView: ScreenSaverView {
     private var fetchingDue = true
     private var lastFetchDate: Date?
     
+    public var backgroundColor = NSColor.black
+    public var textColor = NSColor.white
+    
     override public init?(frame: NSRect, isPreview: Bool) {
         super.init(frame: frame, isPreview: isPreview)
         label = .label(isPreview, bounds: frame)
@@ -49,12 +52,13 @@ open class OnelinerView: ScreenSaverView {
         newFrame.size.width = rect.size.width
         newFrame.size.height = (label.stringValue as NSString).size(withAttributes: [NSAttributedStringKey.font: label.font!]).height
         label.frame = newFrame
+        label.textColor = textColor
         
-        NSColor.black.setFill()
+        backgroundColor.setFill()
         rect.fill()
     }
     
-    open func fetchOneline(_ completion: (String) -> Void) {
+    open func fetchOneline(_ completion: @escaping (String) -> Void) {
         preconditionFailure("`fetchOneline` must be overridden")
     }
     

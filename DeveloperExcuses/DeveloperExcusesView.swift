@@ -11,7 +11,7 @@ private extension URL {
 }
 
 class DeveloperExcusesView: OnelinerView {
-    override func fetchOneline(_ completion: (String) -> Void) {
+    override func fetchOneline(_ completion: @escaping (String) -> Void) {
         guard let data = try? Data(contentsOf: .websiteUrl), let string = String(data: data, encoding: .utf8) else {
             return
         }

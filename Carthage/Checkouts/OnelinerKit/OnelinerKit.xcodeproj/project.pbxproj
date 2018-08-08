@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		074F3C37207FE96800133E35 /* OnelinerKit.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 074F3C36207FE96700133E35 /* OnelinerKit.podspec */; };
 		07A101511FE67FAC00F7A42F /* OnelinerKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07A101471FE67FAC00F7A42F /* OnelinerKit.framework */; };
 		07A101561FE67FAC00F7A42F /* OnelinerKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A101551FE67FAC00F7A42F /* OnelinerKitTests.swift */; };
 		07A101581FE67FAC00F7A42F /* OnelinerKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 07A1014A1FE67FAC00F7A42F /* OnelinerKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -29,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		074F3C36207FE96700133E35 /* OnelinerKit.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OnelinerKit.podspec; sourceTree = SOURCE_ROOT; };
 		07A101471FE67FAC00F7A42F /* OnelinerKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OnelinerKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		07A1014A1FE67FAC00F7A42F /* OnelinerKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OnelinerKit.h; sourceTree = "<group>"; };
 		07A1014B1FE67FAC00F7A42F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 				07A101681FE680E600F7A42F /* View */,
 				07A101611FE6800C00F7A42F /* Extension */,
 				07A1014A1FE67FAC00F7A42F /* OnelinerKit.h */,
+				074F3C36207FE96700133E35 /* OnelinerKit.podspec */,
 				07A1014B1FE67FAC00F7A42F /* Info.plist */,
 			);
 			path = OnelinerKit;
@@ -214,6 +217,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				074F3C37207FE96800133E35 /* OnelinerKit.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
