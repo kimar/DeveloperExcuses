@@ -25,6 +25,6 @@
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2016 Marcus Kida. All rights reserved.</string>
 	<key>NSPrincipalClass</key>
-	<string>DeveloperExcusesView</string>
+	<string>DeveloperExcuses.DeveloperExcusesView</string>
 </dict>
 </plist>

@@ -6,7 +6,7 @@
 //  Copyright © 2017 Marcus Kida. All rights reserved.
 //
 
-import Foundation
+import AppKit
 
 extension NSTextField {
     static func label(_ isPreview: Bool, bounds: CGRect) -> NSTextField {

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		072388001FE6884B00B1E0E2 /* OnelinerKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 072387FF1FE6884A00B1E0E2 /* OnelinerKit.framework */; };
 		072388011FE6885200B1E0E2 /* OnelinerKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 072387FF1FE6884A00B1E0E2 /* OnelinerKit.framework */; };
 		072388021FE6885200B1E0E2 /* OnelinerKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 072387FF1FE6884A00B1E0E2 /* OnelinerKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		076642F11EE92D6D00FE8619 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076642F01EE92D6D00FE8619 /* AppDelegate.swift */; };
@@ -15,6 +14,12 @@
 		076642FD1EE92D9500FE8619 /* DeveloperExcusesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077BC2B01DA22D14007DE060 /* DeveloperExcusesView.swift */; };
 		076643011EE92E8B00FE8619 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 076643001EE92E8B00FE8619 /* Main.storyboard */; };
 		077BC2B11DA22D14007DE060 /* DeveloperExcusesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077BC2B01DA22D14007DE060 /* DeveloperExcusesView.swift */; };
+		07B5E452218645D50005E36F /* OnelinerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B5E451218645D50005E36F /* OnelinerView.swift */; };
+		07B5E459218645DF0005E36F /* String+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B5E454218645DF0005E36F /* String+Constants.swift */; };
+		07B5E45A218645DF0005E36F /* NSTextField+Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B5E455218645DF0005E36F /* NSTextField+Label.swift */; };
+		07B5E45B218645DF0005E36F /* UserDefaults+LastLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B5E456218645DF0005E36F /* UserDefaults+LastLine.swift */; };
+		07B5E45C218645DF0005E36F /* Date+FetchInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B5E457218645DF0005E36F /* Date+FetchInterval.swift */; };
+		07B5E45D218645DF0005E36F /* TimeInterval+FetchInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B5E458218645DF0005E36F /* TimeInterval+FetchInterval.swift */; };
 		2A9D0E6817DB87B300DBFFBD /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A9D0E6717DB87B300DBFFBD /* Cocoa.framework */; };
 		2A9D0E6A17DB87B300DBFFBD /* ScreenSaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A9D0E6917DB87B300DBFFBD /* ScreenSaver.framework */; };
 		2A9D0E7417DB87B300DBFFBD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2A9D0E7217DB87B300DBFFBD /* InfoPlist.strings */; };
@@ -44,6 +49,12 @@
 		076642F91EE92D6D00FE8619 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		076643001EE92E8B00FE8619 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		077BC2B01DA22D14007DE060 /* DeveloperExcusesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeveloperExcusesView.swift; sourceTree = "<group>"; };
+		07B5E451218645D50005E36F /* OnelinerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnelinerView.swift; sourceTree = "<group>"; };
+		07B5E454218645DF0005E36F /* String+Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Constants.swift"; sourceTree = "<group>"; };
+		07B5E455218645DF0005E36F /* NSTextField+Label.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSTextField+Label.swift"; sourceTree = "<group>"; };
+		07B5E456218645DF0005E36F /* UserDefaults+LastLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserDefaults+LastLine.swift"; sourceTree = "<group>"; };
+		07B5E457218645DF0005E36F /* Date+FetchInterval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+FetchInterval.swift"; sourceTree = "<group>"; };
+		07B5E458218645DF0005E36F /* TimeInterval+FetchInterval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TimeInterval+FetchInterval.swift"; sourceTree = "<group>"; };
 		2A9D0E6417DB87B300DBFFBD /* DeveloperExcuses.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeveloperExcuses.saver; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A9D0E6717DB87B300DBFFBD /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		2A9D0E6917DB87B300DBFFBD /* ScreenSaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScreenSaver.framework; path = System/Library/Frameworks/ScreenSaver.framework; sourceTree = SDKROOT; };
@@ -72,7 +83,6 @@
 			files = (
 				2A9D0E6817DB87B300DBFFBD /* Cocoa.framework in Frameworks */,
 				2A9D0E6A17DB87B300DBFFBD /* ScreenSaver.framework in Frameworks */,
-				072388001FE6884B00B1E0E2 /* OnelinerKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +98,26 @@
 				076642F91EE92D6D00FE8619 /* Info.plist */,
 			);
 			path = DeveloperExcusesDebug;
+			sourceTree = "<group>";
+		};
+		07B5E450218645D50005E36F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				07B5E451218645D50005E36F /* OnelinerView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		07B5E453218645DF0005E36F /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				07B5E454218645DF0005E36F /* String+Constants.swift */,
+				07B5E455218645DF0005E36F /* NSTextField+Label.swift */,
+				07B5E456218645DF0005E36F /* UserDefaults+LastLine.swift */,
+				07B5E457218645DF0005E36F /* Date+FetchInterval.swift */,
+				07B5E458218645DF0005E36F /* TimeInterval+FetchInterval.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		2A9D0E5917DB87B300DBFFBD = {
@@ -133,6 +163,8 @@
 		2A9D0E6F17DB87B300DBFFBD /* DeveloperExcuses */ = {
 			isa = PBXGroup;
 			children = (
+				07B5E453218645DF0005E36F /* Extension */,
+				07B5E450218645D50005E36F /* View */,
 				077BC2B01DA22D14007DE060 /* DeveloperExcusesView.swift */,
 				2A9D0E7017DB87B300DBFFBD /* Supporting Files */,
 			);
@@ -191,7 +223,6 @@
 				2A9D0E6017DB87B300DBFFBD /* Headers */,
 				2A9D0E6117DB87B300DBFFBD /* Resources */,
 				2A9D0E6217DB87B300DBFFBD /* Rez */,
-				07A101721FE685EC00F7A42F /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -209,7 +240,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0910;
+				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "Marcus Kida";
 				TargetAttributes = {
 					076642ED1EE92D6D00FE8619 = {
@@ -218,6 +249,7 @@
 						ProvisioningStyle = Automatic;
 					};
 					2A9D0E6317DB87B300DBFFBD = {
+						DevelopmentTeam = 857XYUU5FE;
 						LastSwiftMigration = 0910;
 					};
 				};
@@ -273,25 +305,6 @@
 		};
 /* End PBXRezBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		07A101721FE685EC00F7A42F /* Carthage */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/Mac/OnelinerKit.framework",
-			);
-			name = Carthage;
-			outputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/OnelinerKit.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		076642EA1EE92D6D00FE8619 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -306,7 +319,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07B5E452218645D50005E36F /* OnelinerView.swift in Sources */,
 				077BC2B11DA22D14007DE060 /* DeveloperExcusesView.swift in Sources */,
+				07B5E45B218645DF0005E36F /* UserDefaults+LastLine.swift in Sources */,
+				07B5E45C218645DF0005E36F /* Date+FetchInterval.swift in Sources */,
+				07B5E459218645DF0005E36F /* String+Constants.swift in Sources */,
+				07B5E45D218645DF0005E36F /* TimeInterval+FetchInterval.swift in Sources */,
+				07B5E45A218645DF0005E36F /* NSTextField+Label.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,11 +421,13 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
@@ -436,7 +457,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				SWIFT_INSTALL_OBJC_HEADER = NO;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -448,11 +469,13 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
@@ -475,7 +498,7 @@
 				SDKROOT = macosx;
 				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
@@ -485,11 +508,9 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-				);
+				DEVELOPMENT_TEAM = 857XYUU5FE;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DeveloperExcuses/DeveloperExcuses-Prefix.pch";
 				INFOPLIST_FILE = "DeveloperExcuses/DeveloperExcuses-Info.plist";
@@ -498,6 +519,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.marcuskida.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				WRAPPER_EXTENSION = saver;
 			};
 			name = Debug;
@@ -508,11 +530,9 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-				);
+				DEVELOPMENT_TEAM = 857XYUU5FE;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DeveloperExcuses/DeveloperExcuses-Prefix.pch";
 				INFOPLIST_FILE = "DeveloperExcuses/DeveloperExcuses-Info.plist";
@@ -520,6 +540,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.marcuskida.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
 				WRAPPER_EXTENSION = saver;
 			};
 			name = Release;

@@ -19,7 +19,13 @@ open class OnelinerView: ScreenSaverView {
     public var backgroundColor = NSColor.black
     public var textColor = NSColor.white
     
-    override public init?(frame: NSRect, isPreview: Bool) {
+    convenience init() {
+        self.init(frame: .zero, isPreview: false)
+        label = .label(false, bounds: frame)
+        initialize()
+    }
+    
+    override init!(frame: NSRect, isPreview: Bool) {
         super.init(frame: frame, isPreview: isPreview)
         label = .label(isPreview, bounds: frame)
         initialize()
@@ -50,7 +56,7 @@ open class OnelinerView: ScreenSaverView {
         newFrame.origin.x = 0
         newFrame.origin.y = rect.size.height / 2
         newFrame.size.width = rect.size.width
-        newFrame.size.height = (label.stringValue as NSString).size(withAttributes: [NSAttributedStringKey.font: label.font!]).height
+        newFrame.size.height = (label.stringValue as NSString).size(withAttributes: [NSAttributedString.Key.font: label.font!]).height
         label.frame = newFrame
         label.textColor = textColor
         
