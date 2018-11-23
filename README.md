@@ -19,11 +19,7 @@ And feel free to fork and contribute ;-)
 
 ## Getting started
 
-*DeveloperExcuses* uses carthage to build the *OnelinerKit* dependency.
-
-```
-$ carthage build --platform macos
-```
+Open up *DeveloperExcuses.xcodeproj* using Xcode and hit Cmd+B to build it. That's it.
 
 ## License
 
