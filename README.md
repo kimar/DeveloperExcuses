@@ -2,7 +2,6 @@
 
 [![Twitter: @Kidmar](https://img.shields.io/badge/contact-@Kidmar-blue.svg?style=flat)](https://twitter.com/Kidmar)
 [![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/kimar/DeveloperExcuses/blob/master/LICENSE.md)
-[![TravisCI](https://api.travis-ci.org/kimar/DeveloperExcuses.svg?branch=master)](https://travis-ci.org/kimar/DeveloperExcuses)
 
 
 ## Proudly powered by [OnelinerKit](https://github.com/kimar/OnelinerKit).
@@ -20,6 +19,10 @@ And feel free to fork and contribute ;-)
 ## Getting started
 
 Open up *DeveloperExcuses.xcodeproj* using Xcode and hit Cmd+B to build it. That's it.
+
+## Contributing
+
+As this is only a side-project of mine, there's no roadmap or explicit commitment from my side to fix bugs or add features, however if you'd like to contribute to this project, please feel free to raise a [Pull Request](https://github.com/kimar/DeveloperExcuses/pulls).
 
 ## License
 
