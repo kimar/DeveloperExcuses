@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		072388011FE6885200B1E0E2 /* OnelinerKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 072387FF1FE6884A00B1E0E2 /* OnelinerKit.framework */; };
-		072388021FE6885200B1E0E2 /* OnelinerKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 072387FF1FE6884A00B1E0E2 /* OnelinerKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		076642F11EE92D6D00FE8619 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076642F01EE92D6D00FE8619 /* AppDelegate.swift */; };
 		076642F51EE92D6D00FE8619 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 076642F41EE92D6D00FE8619 /* Assets.xcassets */; };
 		076642FD1EE92D9500FE8619 /* DeveloperExcusesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077BC2B01DA22D14007DE060 /* DeveloperExcusesView.swift */; };
@@ -20,6 +18,12 @@
 		07B5E45B218645DF0005E36F /* UserDefaults+LastLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B5E456218645DF0005E36F /* UserDefaults+LastLine.swift */; };
 		07B5E45C218645DF0005E36F /* Date+FetchInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B5E457218645DF0005E36F /* Date+FetchInterval.swift */; };
 		07B5E45D218645DF0005E36F /* TimeInterval+FetchInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B5E458218645DF0005E36F /* TimeInterval+FetchInterval.swift */; };
+		07F22F0623EEE67400F939BF /* OnelinerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B5E451218645D50005E36F /* OnelinerView.swift */; };
+		07F22F0723EEE68000F939BF /* String+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B5E454218645DF0005E36F /* String+Constants.swift */; };
+		07F22F0823EEE68000F939BF /* NSTextField+Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B5E455218645DF0005E36F /* NSTextField+Label.swift */; };
+		07F22F0923EEE68000F939BF /* UserDefaults+LastLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B5E456218645DF0005E36F /* UserDefaults+LastLine.swift */; };
+		07F22F0A23EEE68000F939BF /* Date+FetchInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B5E457218645DF0005E36F /* Date+FetchInterval.swift */; };
+		07F22F0B23EEE68000F939BF /* TimeInterval+FetchInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B5E458218645DF0005E36F /* TimeInterval+FetchInterval.swift */; };
 		2A9D0E6817DB87B300DBFFBD /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A9D0E6717DB87B300DBFFBD /* Cocoa.framework */; };
 		2A9D0E6A17DB87B300DBFFBD /* ScreenSaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A9D0E6917DB87B300DBFFBD /* ScreenSaver.framework */; };
 		2A9D0E7417DB87B300DBFFBD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2A9D0E7217DB87B300DBFFBD /* InfoPlist.strings */; };
@@ -34,7 +38,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				072388021FE6885200B1E0E2 /* OnelinerKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -73,7 +76,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				072388011FE6885200B1E0E2 /* OnelinerKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +261,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -310,8 +313,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07F22F0823EEE68000F939BF /* NSTextField+Label.swift in Sources */,
+				07F22F0723EEE68000F939BF /* String+Constants.swift in Sources */,
+				07F22F0B23EEE68000F939BF /* TimeInterval+FetchInterval.swift in Sources */,
+				07F22F0923EEE68000F939BF /* UserDefaults+LastLine.swift in Sources */,
+				07F22F0A23EEE68000F939BF /* Date+FetchInterval.swift in Sources */,
 				076642FD1EE92D9500FE8619 /* DeveloperExcusesView.swift in Sources */,
 				076642F11EE92D6D00FE8619 /* AppDelegate.swift in Sources */,
+				07F22F0623EEE67400F939BF /* OnelinerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
