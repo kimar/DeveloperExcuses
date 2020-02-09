@@ -21,19 +21,19 @@ open class OnelinerView: ScreenSaverView {
     
     convenience init() {
         self.init(frame: .zero, isPreview: false)
-        label = .label(false, bounds: frame)
+        label = makeLabel(false, bounds: frame)
         initialize()
     }
     
     override init!(frame: NSRect, isPreview: Bool) {
         super.init(frame: frame, isPreview: isPreview)
-        label = .label(isPreview, bounds: frame)
+        label = makeLabel(isPreview, bounds: frame)
         initialize()
     }
     
     required public init?(coder: NSCoder) {
         super.init(coder: coder)
-        label = .label(isPreview, bounds: bounds)
+        label = makeLabel(isPreview, bounds: bounds)
         initialize()
     }
     
@@ -66,6 +66,26 @@ open class OnelinerView: ScreenSaverView {
     
     open func fetchOneline(_ completion: @escaping (String) -> Void) {
         preconditionFailure("`fetchOneline` must be overridden")
+    }
+    
+    private func makeLabel(_ isPreview: Bool, bounds: CGRect) -> NSTextField {
+        let fontSize: CGFloat = 24.0
+        let label = NSTextField(frame: bounds)
+        label.autoresizingMask = NSView.AutoresizingMask.width
+        label.alignment = .center
+        label.stringValue = "Loading…"
+        label.textColor = .white
+        
+        if #available(OSX 10.15, *) {
+            label.font = NSFont.monospacedSystemFont(ofSize: fontSize, weight: .medium)
+        } else {
+            label.font = NSFont(name: "Courier", size: 24.0)
+        }
+        
+        label.backgroundColor = .clear
+        label.isEditable = false
+        label.isBezeled = false
+        return label
     }
     
     private func initialize() {

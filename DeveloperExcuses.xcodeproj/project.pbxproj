@@ -14,13 +14,11 @@
 		077BC2B11DA22D14007DE060 /* DeveloperExcusesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077BC2B01DA22D14007DE060 /* DeveloperExcusesView.swift */; };
 		07B5E452218645D50005E36F /* OnelinerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B5E451218645D50005E36F /* OnelinerView.swift */; };
 		07B5E459218645DF0005E36F /* String+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B5E454218645DF0005E36F /* String+Constants.swift */; };
-		07B5E45A218645DF0005E36F /* NSTextField+Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B5E455218645DF0005E36F /* NSTextField+Label.swift */; };
 		07B5E45B218645DF0005E36F /* UserDefaults+LastLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B5E456218645DF0005E36F /* UserDefaults+LastLine.swift */; };
 		07B5E45C218645DF0005E36F /* Date+FetchInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B5E457218645DF0005E36F /* Date+FetchInterval.swift */; };
 		07B5E45D218645DF0005E36F /* TimeInterval+FetchInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B5E458218645DF0005E36F /* TimeInterval+FetchInterval.swift */; };
 		07F22F0623EEE67400F939BF /* OnelinerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B5E451218645D50005E36F /* OnelinerView.swift */; };
 		07F22F0723EEE68000F939BF /* String+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B5E454218645DF0005E36F /* String+Constants.swift */; };
-		07F22F0823EEE68000F939BF /* NSTextField+Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B5E455218645DF0005E36F /* NSTextField+Label.swift */; };
 		07F22F0923EEE68000F939BF /* UserDefaults+LastLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B5E456218645DF0005E36F /* UserDefaults+LastLine.swift */; };
 		07F22F0A23EEE68000F939BF /* Date+FetchInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B5E457218645DF0005E36F /* Date+FetchInterval.swift */; };
 		07F22F0B23EEE68000F939BF /* TimeInterval+FetchInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B5E458218645DF0005E36F /* TimeInterval+FetchInterval.swift */; };
@@ -54,7 +52,6 @@
 		077BC2B01DA22D14007DE060 /* DeveloperExcusesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeveloperExcusesView.swift; sourceTree = "<group>"; };
 		07B5E451218645D50005E36F /* OnelinerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnelinerView.swift; sourceTree = "<group>"; };
 		07B5E454218645DF0005E36F /* String+Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Constants.swift"; sourceTree = "<group>"; };
-		07B5E455218645DF0005E36F /* NSTextField+Label.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSTextField+Label.swift"; sourceTree = "<group>"; };
 		07B5E456218645DF0005E36F /* UserDefaults+LastLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserDefaults+LastLine.swift"; sourceTree = "<group>"; };
 		07B5E457218645DF0005E36F /* Date+FetchInterval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+FetchInterval.swift"; sourceTree = "<group>"; };
 		07B5E458218645DF0005E36F /* TimeInterval+FetchInterval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TimeInterval+FetchInterval.swift"; sourceTree = "<group>"; };
@@ -114,7 +111,6 @@
 			isa = PBXGroup;
 			children = (
 				07B5E454218645DF0005E36F /* String+Constants.swift */,
-				07B5E455218645DF0005E36F /* NSTextField+Label.swift */,
 				07B5E456218645DF0005E36F /* UserDefaults+LastLine.swift */,
 				07B5E457218645DF0005E36F /* Date+FetchInterval.swift */,
 				07B5E458218645DF0005E36F /* TimeInterval+FetchInterval.swift */,
@@ -313,7 +309,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07F22F0823EEE68000F939BF /* NSTextField+Label.swift in Sources */,
 				07F22F0723EEE68000F939BF /* String+Constants.swift in Sources */,
 				07F22F0B23EEE68000F939BF /* TimeInterval+FetchInterval.swift in Sources */,
 				07F22F0923EEE68000F939BF /* UserDefaults+LastLine.swift in Sources */,
@@ -334,7 +329,6 @@
 				07B5E45C218645DF0005E36F /* Date+FetchInterval.swift in Sources */,
 				07B5E459218645DF0005E36F /* String+Constants.swift in Sources */,
 				07B5E45D218645DF0005E36F /* TimeInterval+FetchInterval.swift in Sources */,
-				07B5E45A218645DF0005E36F /* NSTextField+Label.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,7 +456,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				SWIFT_INSTALL_OBJC_HEADER = NO;
@@ -503,7 +497,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				SDKROOT = macosx;
 				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -519,12 +513,14 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 2.1.3;
 				DEVELOPMENT_TEAM = 857XYUU5FE;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DeveloperExcuses/DeveloperExcuses-Prefix.pch";
 				INFOPLIST_FILE = "DeveloperExcuses/DeveloperExcuses-Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MARKETING_VERSION = 2.1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.marcuskida.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -541,12 +537,14 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 2.1.3;
 				DEVELOPMENT_TEAM = 857XYUU5FE;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DeveloperExcuses/DeveloperExcuses-Prefix.pch";
 				INFOPLIST_FILE = "DeveloperExcuses/DeveloperExcuses-Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MARKETING_VERSION = 2.1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.marcuskida.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
