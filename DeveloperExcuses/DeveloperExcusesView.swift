@@ -1,4 +1,4 @@
-import Foundation
+import Cocoa
 import ScreenSaver
 
 private extension String {
@@ -24,5 +24,15 @@ class DeveloperExcusesView: OnelinerView {
         }
         
         completion(quotes.first!)
+    }
+    
+    override var hasConfigureSheet: Bool {
+        true
+    }
+    
+    var configureSheetWC = DeveloperExcusesConfigureSheetWC(windowNibName: "DeveloperExcusesConfigureSheetWC")
+    
+    override var configureSheet: NSWindow? {
+        configureSheetWC.window
     }
 }

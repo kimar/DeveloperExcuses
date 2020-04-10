@@ -68,8 +68,19 @@ open class OnelinerView: ScreenSaverView {
         preconditionFailure("`fetchOneline` must be overridden")
     }
     
+    open var onelineFontSize: Double {
+        let size = UserDefaults.standard.double(forKey: .onelineFontSize)
+        if size == 0 {
+            let defaultSize = 24.0
+            UserDefaults.standard.set(defaultSize, forKey: .onelineFontSize)
+            return defaultSize
+        } else {
+            return size
+        }
+    }
+    
     private func makeLabel(_ isPreview: Bool, bounds: CGRect) -> NSTextField {
-        let fontSize: CGFloat = 24.0
+        let fontSize = CGFloat(onelineFontSize)
         let label = NSTextField(frame: bounds)
         label.autoresizingMask = NSView.AutoresizingMask.width
         label.alignment = .center
@@ -79,7 +90,7 @@ open class OnelinerView: ScreenSaverView {
         if #available(OSX 10.15, *) {
             label.font = NSFont.monospacedSystemFont(ofSize: fontSize, weight: .medium)
         } else {
-            label.font = NSFont(name: "Courier", size: 24.0)
+            label.font = NSFont(name: "Courier", size: fontSize)
         }
         
         label.backgroundColor = .clear
