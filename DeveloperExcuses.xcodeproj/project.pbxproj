@@ -25,6 +25,10 @@
 		2A9D0E6817DB87B300DBFFBD /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A9D0E6717DB87B300DBFFBD /* Cocoa.framework */; };
 		2A9D0E6A17DB87B300DBFFBD /* ScreenSaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A9D0E6917DB87B300DBFFBD /* ScreenSaver.framework */; };
 		2A9D0E7417DB87B300DBFFBD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2A9D0E7217DB87B300DBFFBD /* InfoPlist.strings */; };
+		3C9050DD2440FD9200542954 /* DeveloperExcusesConfigureSheetWC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9050DB2440FD9100542954 /* DeveloperExcusesConfigureSheetWC.swift */; };
+		3C9050DE2440FD9200542954 /* DeveloperExcusesConfigureSheetWC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C9050DC2440FD9200542954 /* DeveloperExcusesConfigureSheetWC.xib */; };
+		3C9050DF2440FE4B00542954 /* DeveloperExcusesConfigureSheetWC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9050DB2440FD9100542954 /* DeveloperExcusesConfigureSheetWC.swift */; };
+		3C9050E02440FE4E00542954 /* DeveloperExcusesConfigureSheetWC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C9050DC2440FD9200542954 /* DeveloperExcusesConfigureSheetWC.xib */; };
 		8117802E1D80A79F00127177 /* thumbnail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8117802D1D80A79F00127177 /* thumbnail@2x.png */; };
 		811780321D80B5DD00127177 /* thumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = 811780311D80B5DD00127177 /* thumbnail.png */; };
 /* End PBXBuildFile section */
@@ -64,6 +68,8 @@
 		2A9D0E7117DB87B300DBFFBD /* DeveloperExcuses-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DeveloperExcuses-Info.plist"; sourceTree = "<group>"; };
 		2A9D0E7317DB87B300DBFFBD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2A9D0E7517DB87B300DBFFBD /* DeveloperExcuses-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DeveloperExcuses-Prefix.pch"; sourceTree = "<group>"; };
+		3C9050DB2440FD9100542954 /* DeveloperExcusesConfigureSheetWC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperExcusesConfigureSheetWC.swift; sourceTree = "<group>"; };
+		3C9050DC2440FD9200542954 /* DeveloperExcusesConfigureSheetWC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeveloperExcusesConfigureSheetWC.xib; sourceTree = "<group>"; };
 		8117802D1D80A79F00127177 /* thumbnail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thumbnail@2x.png"; sourceTree = "<group>"; };
 		811780311D80B5DD00127177 /* thumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumbnail.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -164,6 +170,8 @@
 				07B5E453218645DF0005E36F /* Extension */,
 				07B5E450218645D50005E36F /* View */,
 				077BC2B01DA22D14007DE060 /* DeveloperExcusesView.swift */,
+				3C9050DB2440FD9100542954 /* DeveloperExcusesConfigureSheetWC.swift */,
+				3C9050DC2440FD9200542954 /* DeveloperExcusesConfigureSheetWC.xib */,
 				2A9D0E7017DB87B300DBFFBD /* Supporting Files */,
 			);
 			path = DeveloperExcuses;
@@ -279,6 +287,7 @@
 			files = (
 				076642F51EE92D6D00FE8619 /* Assets.xcassets in Resources */,
 				076643011EE92E8B00FE8619 /* Main.storyboard in Resources */,
+				3C9050E02440FE4E00542954 /* DeveloperExcusesConfigureSheetWC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +295,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C9050DE2440FD9200542954 /* DeveloperExcusesConfigureSheetWC.xib in Resources */,
 				2A9D0E7417DB87B300DBFFBD /* InfoPlist.strings in Resources */,
 				8117802E1D80A79F00127177 /* thumbnail@2x.png in Resources */,
 				811780321D80B5DD00127177 /* thumbnail.png in Resources */,
@@ -313,6 +323,7 @@
 				07F22F0B23EEE68000F939BF /* TimeInterval+FetchInterval.swift in Sources */,
 				07F22F0923EEE68000F939BF /* UserDefaults+LastLine.swift in Sources */,
 				07F22F0A23EEE68000F939BF /* Date+FetchInterval.swift in Sources */,
+				3C9050DF2440FE4B00542954 /* DeveloperExcusesConfigureSheetWC.swift in Sources */,
 				076642FD1EE92D9500FE8619 /* DeveloperExcusesView.swift in Sources */,
 				076642F11EE92D6D00FE8619 /* AppDelegate.swift in Sources */,
 				07F22F0623EEE67400F939BF /* OnelinerView.swift in Sources */,
@@ -327,6 +338,7 @@
 				077BC2B11DA22D14007DE060 /* DeveloperExcusesView.swift in Sources */,
 				07B5E45B218645DF0005E36F /* UserDefaults+LastLine.swift in Sources */,
 				07B5E45C218645DF0005E36F /* Date+FetchInterval.swift in Sources */,
+				3C9050DD2440FD9200542954 /* DeveloperExcusesConfigureSheetWC.swift in Sources */,
 				07B5E459218645DF0005E36F /* String+Constants.swift in Sources */,
 				07B5E45D218645DF0005E36F /* TimeInterval+FetchInterval.swift in Sources */,
 			);

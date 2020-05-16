@@ -9,6 +9,7 @@
 import Foundation
 
 extension String {
+    static let onelineFontSize = "onelineFontSize"
     static let lastOneline = "lastOneline"
     static let fetchQueue = "io.kida.OnelinerKit.fetchQueue"
 }
