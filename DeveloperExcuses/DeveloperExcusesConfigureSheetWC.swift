@@ -15,6 +15,7 @@ class DeveloperExcusesConfigureSheetWC: NSWindowController {
     @objc dynamic var fontSize: Double = UserDefaults.standard.double(forKey: .onelineFontSize) {
         didSet {
             UserDefaults.standard.set(fontSize, forKey: .onelineFontSize)
+            UserDefaults.standard.synchronize()
         }
     }
 }

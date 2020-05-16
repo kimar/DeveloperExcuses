@@ -73,6 +73,7 @@ open class OnelinerView: ScreenSaverView {
         if size == 0 {
             let defaultSize = 24.0
             UserDefaults.standard.set(defaultSize, forKey: .onelineFontSize)
+            UserDefaults.standard.synchronize()
             return defaultSize
         } else {
             return size
